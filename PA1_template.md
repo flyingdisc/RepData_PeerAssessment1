@@ -213,15 +213,16 @@ sprintf("median = %.3f", median(steps_sum1$steps, na.rm=TRUE))
 ```
 
 #### Do these values differ from the estimates from the first part of the assignment? 
-The values differ for `median`, but the same for `mean`.  
+The values differ for `median`, but almost the same for `mean`.  
 *First mean = 10766.189, Second mean = 10766.189  
 *First median = 10765.000, Second median = 10766.189  
 
 #### What is the impact of imputing missing data on the estimates of the total daily number of steps?
-- Without imputing, there is inonsistency among data, estimation is biased.
-- Imputing missing values make data **more consistent statistically**.
-- This is proven by more **consistent** values of median and mean.
-- In this case after imputation, mean = median = 10766.189. Thus consistent statistically. 
+* Without imputation, there is missing values, so there is inonsistency in data set (biased), thus mean/median of the data set is also biased.    
+* By imputing missing values, we fill "missing values" by the "estimation of the missing values". In this case, estimation is done by taking the mean of 5-minute interval data.  
+* A good estimation will make data "more consistent statistically" or "unbiased".    
+* This is proven by more "consistent" values of median and mean, or closer values of both mean and median.    
+* In this case, before imputation, mean (10766.189) is different to median (10765.000). After imputation, mean = median = 10766.189. Thus more consistent statistically, making the data set to be more unbiased.     
 
 -------------------------
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -268,5 +269,8 @@ print(gp)
 ```
 
 ![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png) 
+
+From the plots, we see there is differences in activity patterns between weekdays and weekends.    
+    
 <hr>
 ---------------------------------------
